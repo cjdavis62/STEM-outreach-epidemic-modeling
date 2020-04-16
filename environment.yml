@@ -1,0 +1,13 @@
+name: stem-model-environment
+channels:
+  - conda-forge
+dependencies:
+  - numpy
+  - pandas
+  - matplotlib
+  - ipywidgets
+  - seaborn
+  - glob
+  - moviepy
+  - IPython
+ 
