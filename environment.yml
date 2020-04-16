@@ -7,7 +7,7 @@ dependencies:
   - matplotlib
   - ipywidgets
   - seaborn
-  - glob
+  - glob2
   - moviepy
   - IPython
  
