@@ -1,3 +1,10 @@
+from IPython.display import clear_output
+import seaborn as sns
+import pandas as pd
+import os
+import moviepy.editor as mpy
+
+
 def update_progress(progress):
     bar_length = 20
     if isinstance(progress, int):
