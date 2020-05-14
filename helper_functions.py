@@ -3,6 +3,8 @@ import seaborn as sns
 import pandas as pd
 import os
 import moviepy.editor as mpy
+import matplotlib.pyplot as plt
+import glob
 
 
 def update_progress(progress):
