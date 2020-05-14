@@ -6,6 +6,7 @@ import moviepy.editor as mpy
 
 
 def update_progress(progress):
+    """progress bar"""
     bar_length = 20
     if isinstance(progress, int):
         progress = float(progress)
@@ -23,6 +24,7 @@ def update_progress(progress):
     print(text)
 
 def collect_data(people):
+    """collect data to be plotted"""
     list_of_people = people.copy()
     healthy_population = healthy_people(list_of_people)
     infected_population = infected_people(list_of_people)
@@ -39,7 +41,33 @@ def collect_data(people):
     return num_healthy, num_infected, num_immune, x_positions, y_positions, status
 
 
+def healthy_people(list_of_people):
+    """returns a list of healthy people"""
+    healthy_people = []
+    for person in list_of_people:
+        if person.status == "naive":
+            healthy_people.append(person)
+    return healthy_people
+
+def infected_people(list_of_people):
+    """returns a list of infected people"""
+    infected_people = []
+    for person in list_of_people:
+        if person.status == "infected":
+            infected_people.append(person)
+    return infected_people
+
+def immune_people(list_of_people):
+    """returns a list of immune people"""
+    immune_people = []
+    for person in list_of_people:
+        if person.status == "immune":
+            immune_people.append(person)
+    return immune_people
+
+
 def make_plots(df_infections, df_positions, last_day):
+    """Make the plots and gif given the data from each day"""
     os.system("rm -rf plots")
     os.mkdir("plots")
     print("Generating Plots")
