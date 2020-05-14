@@ -1,4 +1,4 @@
-from IPython.display import clear_output
+from IPython.display import Image, clear_output, display
 import seaborn as sns
 import pandas as pd
 import os
