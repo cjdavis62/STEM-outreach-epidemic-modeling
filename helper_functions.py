@@ -35,9 +35,9 @@ def collect_data(people):
     num_infected = len(infected_population)
     num_immune = len(immune_population)
 
-    x_positions = [person.get_x() for person in people]
-    y_positions = [person.get_y() for person in people]
-    status = [person.get_status() for person in people]
+    x_positions = [person.x for person in people]
+    y_positions = [person.y for person in people]
+    status = [person.status for person in people]
     return num_healthy, num_infected, num_immune, x_positions, y_positions, status
 
 
@@ -112,3 +112,14 @@ def make_plots(df_infections, df_positions, last_day):
     plt.show()
 
     return Image("infections.gif")
+
+
+def append_population(healthy_population, infected_population, immune_population):
+    total_population = []
+    for person in healthy_population:
+        total_population.append(person)
+    for person in infected_population:
+        total_population.append(person)
+    for person in immune_population:
+        total_population.append(person)
+    return total_population
