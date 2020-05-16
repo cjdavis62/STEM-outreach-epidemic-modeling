@@ -92,7 +92,6 @@ def make_plots(df_infections, df_positions, last_day):
         plt.title(f"Day: {day}")
         plt.legend(loc=1)
         plt.savefig(f"plots/day_{day}.png", dpi = 100)
-        plt.savefig(f"plots/day_{day}.pdf")
         plt.clf()
         update_progress(day / min(365, last_day))
 
@@ -104,8 +103,8 @@ def make_plots(df_infections, df_positions, last_day):
     clip = mpy.ImageSequenceClip(file_list, fps=fps)
     clip.write_gif('{}.gif'.format(gif_name), fps=fps)
 
-    sns.scatterplot(data = df_infections, x = "days", y = "infected", label = "infected")
     sns.scatterplot(data = df_infections, x = "days", y = "healthy", label = "naive")
+    sns.scatterplot(data = df_infections, x = "days", y = "infected", label = "infected")
     sns.scatterplot(data = df_infections, x = "days", y = "immune", label = "immune")
     plt.legend()
     plt.ylabel("People")
