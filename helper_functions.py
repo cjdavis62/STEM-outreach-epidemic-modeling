@@ -124,3 +124,6 @@ def append_population(healthy_population, infected_population, immune_population
     for person in immune_population:
         total_population.append(person)
     return total_population
+
+def show_day(Day):
+    return Image(f"plots/day_{Day}.png")
